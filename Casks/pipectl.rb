@@ -5,22 +5,22 @@ cask "pipectl" do
   on_macos do
     on_intel do
       url "https://github.com/pipectl/pipectl/releases/download/v#{version}/pipectl_#{version}_darwin_amd64.tar.gz"
-      sha256 "5649fb409a9516c30c2e61c4147be131ac51c036f3f1d683380fdfb9faf20518"
+      sha256 "1cfb0c8e61864ab8060123ddb731036fc8c329f120c1eecb4368bf71dd05cf09"
     end
     on_arm do
       url "https://github.com/pipectl/pipectl/releases/download/v#{version}/pipectl_#{version}_darwin_arm64.tar.gz"
-      sha256 "70796be5052139b0a9f373733b2a88e1c8b6a35209a322502a239ba529634a3b"
+      sha256 "f20c1821a3635c24b4b7d051c278b630a71e48c58405231a7c0763ee96851209"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/pipectl/pipectl/releases/download/v#{version}/pipectl_#{version}_linux_amd64.tar.gz"
-      sha256 "0eef1d3ad32a02bc7afa80ac861e35ef2ea12c4f254b1dc4a90a628d81372a2d"
+      sha256 "c5d47ae1035b0560e400989779fb28fe58559f6bcab97c3237e63bab5ec55775"
     end
     on_arm do
       url "https://github.com/pipectl/pipectl/releases/download/v#{version}/pipectl_#{version}_linux_arm64.tar.gz"
-      sha256 "a3649b7427616dcdcacfaf5441652f58134eef8f2fa389ef2deebec301c7ee0e"
+      sha256 "ef3d0163d795c925d6690f33e63f159faf99b73a0cae179c9a641a2de7b51802"
     end
   end
 
@@ -35,7 +35,7 @@ cask "pipectl" do
   binary "pipectl"
 
   postflight do
-    system_command '/usr/bin/xattr', args: ['-dr', 'com.apple.quarantine', '#{staged_path}/pipectl']
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/pipectl"]
   end
 
   # No zap stanza required
